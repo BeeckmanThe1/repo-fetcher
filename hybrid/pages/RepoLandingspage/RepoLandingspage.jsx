@@ -1,5 +1,4 @@
 import React from 'react';
-import WEBSITE_SETUP from '../../../server/WEBSITE_SETUP';
 
 const RepoLandingsPage = () => {
     return <>

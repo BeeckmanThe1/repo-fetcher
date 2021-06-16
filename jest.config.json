@@ -1,0 +1,15 @@
+{
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+        "{hybrid,client,server}/utils/*.util.js"
+    ],
+    "coveragePathIgnorePatterns": [
+        "node_modules"
+    ],
+    "coverageDirectory": "<rootDir>/coverage/",
+    "coverageThreshold": {
+        "global": {
+            "lines": 100
+        }
+    }
+}

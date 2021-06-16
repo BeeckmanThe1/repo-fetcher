@@ -16,7 +16,7 @@
     "build-storybook": "build-storybook",
     "lint": "eslint --ext .js --ext .jsx client server hybrid",
     "lint:fix": "eslint --ext .js --ext .jsx client server hybrid --fix"
-  },C:\Users\TOEBK48\projects\side-projects\repo-fetcher\hybrid\pages\RepoLandingspage\RepoLandingspage.jsx
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/BeeckmanThe1/static-isomorphic-boilerplate.git"

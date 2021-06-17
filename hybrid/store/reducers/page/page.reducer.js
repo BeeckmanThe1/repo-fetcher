@@ -7,8 +7,8 @@ export default function (state, action) {
     switch (action.type) {
     case ACTION_TYPES.PAGE.setPageMetadata:
         return setProjectPageInfo(state, action?.payload);
-        case ACTION_TYPES.PAGE.setPageRepo:
-            return setRepoPageData(state, action?.payload);
+    case ACTION_TYPES.PAGE.setPageRepo:
+        return setRepoPageData(state, action?.payload);
     default:
         return state || initialState.loadInitials().page;
     }

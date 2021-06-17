@@ -6,7 +6,7 @@ const reduceRepository = repo => {
         fullName: repo?.full_name,
         description: repo?.description,
         slug: `/${repo?.name}`,   //TODO: this could be improved
-    }
+    };
 };
 
 export const setRepositories = (state, payload) => {

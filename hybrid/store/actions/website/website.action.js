@@ -7,7 +7,7 @@ const setProjectConstants = () => {
         payload: {
             projectName: 'Repo fetcher'
         }
-    }
+    };
 };
 
 const fetchRepositoriesData = () => {

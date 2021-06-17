@@ -1,4 +1,4 @@
-import {getPageHtml, getReposLandingPageHtml} from '../htmlTemplating/pageProvider';
+import {getPageHtml} from '../htmlTemplating/pageProvider';
 import WEBSITE_SETUP from '../WEBSITE_SETUP';
 import websiteStoreProvider from '../../hybrid/store/websiteStoreProvider';
 
@@ -29,7 +29,7 @@ const init = async router => {
             const PAGE = getRepoPageMetaData(repo);
             const html = await getPageHtml(PAGE, {store: sharedStore, repo});
             return res.send(html);
-        })
+        });
     });
 
     //	Development index page

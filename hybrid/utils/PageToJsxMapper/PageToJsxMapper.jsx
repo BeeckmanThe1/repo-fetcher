@@ -12,7 +12,7 @@ export default (PAGE, returnAsHtml, store) => {
     case PAGES.DEVELOPMENT_INDEX_PAGE.ID:
         jsx = <Pages.LandingPage/>;
         break;
-    case PAGES.REPO_LANDINGS_PAGE.ID:
+        case PAGES.STATIC_PAGES.REPO_LANDINGS_PAGE.ID:
         jsx = <Pages.RepoLandingPage/>;
         break;
     default:

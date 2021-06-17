@@ -1,6 +1,7 @@
 import scriptsProvider from './scriptsProvider';
 import PageToJsxMapper from '../../hybrid/utils/PageToJsxMapper/PageToJsxMapper.jsx';
 import pageStoreProvider from '../../hybrid/store/pageStoreProvider';
+import WEBSITE_SETUP from "../WEBSITE_SETUP";
 
 const getHeadTag = PAGE => {
 
@@ -34,12 +35,36 @@ const addHeaderAndBodyWrapper = (reactHtml, pageOptions, store) => {
         	</html>`;
 };
 
-export const getPageHtml = async (PAGE, options) => {
+export const getStaticPageHtml = async (PAGE, options) => {
     const store = options?.store;
-    const populatedStore = await pageStoreProvider.populateStore({store, pageInfo: PAGE});
+    const populatedStore = await pageStoreProvider.populateStoreWithPageMetaData({store, pageInfo: PAGE});
 
     const reactHtml = PageToJsxMapper(PAGE, true, populatedStore);
 
     const pageHtml = addHeaderAndBodyWrapper(reactHtml, PAGE, populatedStore);
     return pageHtml;
 };
+
+/*export const getReposLandingPageHtml = async (options) => {
+    const store = options?.store;
+    const REPO_LANDING_PAGE = WEBSITE_SETUP.PAGES.REPO_LANDINGS_PAGE;
+    const repodata = store.getState();  //...
+    const populatedStore = await pageStoreProvider.populateStoreWithPageMetaData({store, REPO_LANDING_PAGE});
+
+    const reactHtml = PageToJsxMapper(PAGE, true, populatedStore);
+    const pageHtml = addHeaderAndBodyWrapper(reactHtml, PAGE, populatedStore);
+    return pageHtml;
+};*/
+
+/*
+export const getGenericRepoPageHtml = async (PAGE, options) => {
+    const store = options?.store;
+    const REPO_LANDING_PAGE = WEBSITE_SETUP.PAGES.REPO_LANDINGS_PAGE;
+    const repositoryPopulatedStore = options.repositoryPopulatedStore;
+    const REPO_PAGE  = fetchPageMetaDataFromRepoStore(repositoryPopulatedStore);
+    const populatedStore = await pageStoreProvider.populateStoreWithPageMetaData({store: repositoryPopulatedStore, REPO_PAGE});
+
+    const reactHtml = '<h1>test<h2>'; //PageToJsxMapper(PAGE, true, populatedStore);
+    const pageHtml = addHeaderAndBodyWrapper(reactHtml, PAGE, populatedStore);
+    return pageHtml;
+};*/

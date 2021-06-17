@@ -1,6 +1,7 @@
 export default {
     WEBSITE: {
-        setProjectConstants: 'website.setProjectConstants'
+        setProjectConstants: 'website.setProjectConstants',
+        fetchRepositoriesData: 'website.fetchRepositoriesData'
     },
     PAGE: {
         setPageMetadata: 'page.setPageMetadata'

@@ -6,6 +6,7 @@ const populateStore = options => {
     const promises = [];
 
     promises.push(store.dispatch(websiteAction.setProjectConstants()));
+    promises.push(store.dispatch(websiteAction.fetchRepositoriesData()));
 
     return Promise.all(promises).then(() => store);
 };

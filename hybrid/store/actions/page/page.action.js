@@ -7,5 +7,12 @@ const setPageMetadata = pageInfo => {
     };
 };
 
-export default {setPageMetadata};
+const setPageRepo = (payload) => {
+    return {
+        type: ACTION_TYPES.PAGE.setPageRepo,
+        payload
+    };
+};
+
+export default {setPageMetadata, setPageRepo};
 

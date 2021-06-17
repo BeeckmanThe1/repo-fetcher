@@ -12,11 +12,11 @@ const hydrateServerRenderedContent = () => {
         const store = createStore(serverProcessedReduxData);
 
         const currentPageId = document.getElementsByTagName('body')[0].id;
-        const PAGE = WEBSITE_SETUP.ALL_STATIC_PAGES.find(PAGE => PAGE.ID === currentPageId);
+        const PAGE = WEBSITE_SETUP.ALL_PAGES.find(PAGE => PAGE.ID === currentPageId);
         const appNode = document.getElementById(PAGE.WRAPPER_ID);
-        const jsx = PageToJsxMapper(PAGE,false, store);
+        const jsx = PageToJsxMapper(PAGE, false, {store});
         ReactDOM.hydrate(jsx, appNode);
-        console.log('Succesfully hydrated page:', PAGE.TITLE);
+        console.log('Succesfully hydrated');
     } catch (err) {
         //TODO
     }

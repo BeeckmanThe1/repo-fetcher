@@ -1,6 +1,6 @@
 import React from 'react';
 import WEBSITE_SETUP from '../../../server/WEBSITE_SETUP';
-import {useSelector} from "react-redux";
+import {useSelector} from 'react-redux';
 
 const DevLandingspage = () => {
     const repos = useSelector(state => state?.website.repositories?.items || []);
@@ -13,7 +13,7 @@ const DevLandingspage = () => {
         </ul>
         <h2>Dynamic pages</h2>
         <ul>
-            {repos.map(repo => <li><a href={repo?.slug}>{repo.name}</a></li>)}
+            {repos.map(repo => <li key={repo?.name}><a href={repo?.slug}>{repo.name}</a></li>)}
         </ul>
     </>;
 };

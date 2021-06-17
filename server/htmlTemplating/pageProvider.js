@@ -35,7 +35,6 @@ const addHeaderAndBodyWrapper = (reactHtml, pageOptions, store) => {
 };
 
 export const getPageHtml = async (PAGE, options) => {
-    const store = options?.store;
     const populatedStore = await pageStoreProvider.populateStore({...options, pageInfo: PAGE});
 
     const reactHtml = PageToJsxMapper(PAGE, true, {store: populatedStore});

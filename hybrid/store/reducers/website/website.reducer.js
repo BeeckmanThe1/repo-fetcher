@@ -7,8 +7,8 @@ export default function (state, action) {
     switch (action.type) {
     case ACTION_TYPES.WEBSITE.setProjectConstants:
         return setProjectConstants(state, action?.payload);
-        case ACTION_TYPES.WEBSITE.fetchRepositoriesData:
-            return setRepositories(state, action?.payload);
+    case ACTION_TYPES.WEBSITE.fetchRepositoriesData:
+        return setRepositories(state, action?.payload);
     default:
         return state || initialState.loadInitials().website;
     }

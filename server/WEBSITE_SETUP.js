@@ -40,5 +40,9 @@ export default {
     },
     get ALL_STATIC_PAGES() {
         return Object.values(this.PAGES.STATIC_PAGES);
+    },
+    get ALL_PAGES() {
+        const {REPO_DETAIL_PAGE, DEVELOPMENT_INDEX_PAGE} = this.PAGES;
+        return [REPO_DETAIL_PAGE, DEVELOPMENT_INDEX_PAGE, ...this.ALL_STATIC_PAGES];
     }
 };

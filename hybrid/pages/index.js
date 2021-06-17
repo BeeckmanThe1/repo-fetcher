@@ -1,7 +1,9 @@
-import LandingPage from './Landingspage/Landingspage.jsx';
+import DevLandingPage from './DevLandingspage/DevLandingspage.jsx';
 import RepoLandingPage from './RepoLandingspage/RepoLandingspage.jsx';
+import RepoDetailPage from './RepoDetailPage/RepoDetailPage.jsx';
 
 export default {
-    LandingPage,
-    RepoLandingPage
+    DevLandingPage,
+    RepoLandingPage,
+    RepoDetailPage
 };

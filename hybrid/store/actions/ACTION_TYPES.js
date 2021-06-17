@@ -4,6 +4,7 @@ export default {
         fetchRepositoriesData: 'website.fetchRepositoriesData'
     },
     PAGE: {
-        setPageMetadata: 'page.setPageMetadata'
+        setPageMetadata: 'page.setPageMetadata',
+        setPageRepo: 'page.setPageRepo'
     }
 };

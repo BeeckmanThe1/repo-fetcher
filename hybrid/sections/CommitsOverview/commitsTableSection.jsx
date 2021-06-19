@@ -2,14 +2,27 @@ import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from "react-redux";
 import pageActions from "../../store/actions/page/page.action";
 import classnames from 'classnames';
+import storageHelper from '../../utils/storageHelper.util';
 
 const CommitsTableSection = () => {
-    const repo = useSelector(state => state?.page?.repo);
 
+    const repo = useSelector(state => state?.page?.repo);
     const dispatch = useDispatch();
     const commits = repo?.commits || [];
 
-    useEffect(() => dispatch(pageActions.addCommitsToRepo(repo)), []);
+    //TODO: move this somewhere else
+    const displayDate = date => date && new Date(date)?.toLocaleDateString();
+
+    useEffect(() => {
+        const storedCommits = storageHelper.getItem('commits');
+        dispatch(pageActions.addCommitsToRepo(repo, storedCommits));
+    }, []);
+
+    useEffect(() => {
+        console.log('repo?.commits', repo?.commits);
+        !!repo?.commits && storageHelper.setItem('commits', repo?.commits);
+    }, [repo?.commits]);
+
     return <section className={classnames('rep-commits-overview', 'container')}>
         <h2>Commits</h2>
         <table className="table">
@@ -24,7 +37,7 @@ const CommitsTableSection = () => {
             {commits.map(commit => <tr>
                 <td>{commit.author}</td>
                 <td>{commit?.message || 'Author'}</td>
-                <td>{new Date(commit?.date).toLocaleDateString()}</td>
+                <td>{displayDate(commit?.date)}</td>
             </tr>)}
 
             </tbody>

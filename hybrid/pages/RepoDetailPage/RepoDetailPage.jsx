@@ -1,12 +1,13 @@
 import React from 'react';
-import {useSelector} from 'react-redux';
 import CommitsTableSection from "../../sections/CommitsOverview/commitsTableSection.jsx";
+import PageIntro from "../../partials/PageIntro/PageIntro.jsx";
+import {useSelector} from "react-redux";
 
 const RepoDetailsPage = () => {
     const repo = useSelector(state => state?.page?.repo);
 
     return <div className={'rep-repo-details-page'}>
-        <h1>{repo?.name}</h1>
+        <PageIntro {...{header: repo?.name, extraClassName: 'rep-repository-overview'}}><a href={'/'}>Back to overview</a></PageIntro>
         <CommitsTableSection/>
     </div>;
 };

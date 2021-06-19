@@ -13,14 +13,16 @@ const CommitsTableSection = () => {
     //TODO: move this somewhere else
     const displayDate = date => date && new Date(date)?.toLocaleDateString();
 
+    const repoCommitsKey = `${repo?.name}.commits`;
+
     useEffect(() => {
-        const storedCommits = storageHelper.getItem('commits');
+        const storedCommits = storageHelper.getItem(repoCommitsKey);
         dispatch(pageActions.addCommitsToRepo(repo, storedCommits));
     }, []);
 
     useEffect(() => {
         console.log('repo?.commits', repo?.commits);
-        !!repo?.commits && storageHelper.setItem('commits', repo?.commits);
+        !!repo?.commits && storageHelper.setItem(repoCommitsKey, repo?.commits);
     }, [repo?.commits]);
 
     return <section className={classnames('rep-commits-overview', 'container')}>

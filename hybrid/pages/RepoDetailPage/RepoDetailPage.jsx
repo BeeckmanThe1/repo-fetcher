@@ -1,21 +1,14 @@
-import React, {useEffect} from 'react';
-import {useDispatch, useSelector} from 'react-redux';
-import pageActions from '../../store/actions/page/page.action';
+import React from 'react';
+import {useSelector} from 'react-redux';
+import CommitsTableSection from "../../sections/CommitsOverview/commitsTableSection.jsx";
 
 const RepoDetailsPage = () => {
     const repo = useSelector(state => state?.page?.repo);
-    const dispatch = useDispatch();
-    const commits = repo?.commits || [];
 
-    useEffect(() => dispatch(pageActions.addCommitsToRepo(repo)),[]);
-
-    return <>
+    return <div className={'rep-repo-details-page'}>
         <h1>{repo?.name}</h1>
-        <h2>Commits</h2>
-        <ul>
-            {commits.map(commit => <li>test</li>)}
-        </ul>
-    </>;
+        <CommitsTableSection/>
+    </div>;
 };
 
 export default RepoDetailsPage;

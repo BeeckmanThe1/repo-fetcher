@@ -1,5 +1,7 @@
 import ACTION_TYPES from '../ACTION_TYPES';
 import axios from "axios";
+import storageHelper from '../../../utils/storageHelper.util';
+import CONSTANTS from "../../../CONSTANTS";
 
 const setPageMetadata = pageInfo => {
     return {
@@ -15,11 +17,17 @@ const setPageRepo = (payload) => {
     };
 };
 
-const addCommitsToRepo = (repo) => {
+
+const getFromMemory = key => {
+
+};
+
+//TODO: dry config
+const addCommitsToRepo = (repo, commits) => {
     const repoName = repo?.name;
     return async dispatch => {
         try {
-            const result = await axios.get(`https://api.github.com/repos/BeeckmanThe1/${repoName}/commits?per_page=20`, {
+            const fetchResult = !commits && await axios.get(`https://api.github.com/repos/BeeckmanThe1/${repoName}/commits?per_page=20`, {
                 auth: {
                     username: process.env.GITHUB_USERNAME,
                     password: process.env.GITHUB_PASSWORD
@@ -27,7 +35,10 @@ const addCommitsToRepo = (repo) => {
             });
             return dispatch({
                 type: ACTION_TYPES.PAGE.addCommitsToRepo,
-                payload: {commits: result?.data}
+                payload: {
+                    commits: commits || fetchResult?.data,
+                    isAlreadyReduced: !!commits
+                }
             });
         } catch (err) {
             return;  //  TODO: write decent error handling

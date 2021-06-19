@@ -18,7 +18,8 @@ export const addCommitsToRepo = (state, payload) => {
     const newState = _.cloneDeep(state);
 
     const rawCommits = payload?.commits || [];
-    const reducedCommits = rawCommits.map(commit => reduceCommit(commit?.commit));
+    const isAlreadyReduced = payload?.isAlreadyReduced;
+    const reducedCommits = isAlreadyReduced ? rawCommits : rawCommits.map(commit => reduceCommit(commit?.commit));
     const newRepo = newState.repo || {};
     newRepo.commits = reducedCommits;
     newState.repo = newRepo;

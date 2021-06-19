@@ -1,0 +1,12 @@
+/*
+Example of bootstrap var override:
+
+$theme-colors: ("primary": $primary-theme-color);
+$body-bg: $secondary-color;
+
+note: indeed: first override, then import!
+ */
+
+@import "~bootstrap/scss/bootstrap";
+
+

@@ -12,24 +12,22 @@ const setProjectConstants = () => {
 
 const fetchRepositoriesData = () => {
     return async dispatch => {
-        const result = await axios.get('https://api.github.com/users/BeeckmanThe1/repos');
-        return dispatch({
-            type: ACTION_TYPES.WEBSITE.fetchRepositoriesData,
-            payload: {repositories: result?.data}
-        });
+        try {
+            const result = await axios.get('https://api.github.com/users/BeeckmanThe1/repos', {
+                auth: {
+                    username: process.env.GITHUB_USERNAME,
+                    password: process.env.GITHUB_PASSWORD
+                }
+            });
+            return dispatch({
+                type: ACTION_TYPES.WEBSITE.fetchRepositoriesData,
+                payload: {repositories: result?.data}
+            });
+        } catch (err) {
+            return;     //  TODO: write decent error handling
+        }
     };
 };
-
-/*
-export const setPages = () => {
-    return async dispatch => {
-        const result = await axios.get('/api/pages');
-        return dispatch({
-            type: ACTION_TYPES.CMS.SET_PAGES,
-            payload: {pages: result?.data}
-        });
-    }
-};*/
 
 export default {setProjectConstants, fetchRepositoriesData};
 

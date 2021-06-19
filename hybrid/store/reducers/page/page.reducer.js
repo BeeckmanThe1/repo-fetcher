@@ -1,7 +1,7 @@
 import initialState from '../../initialState';
 import ACTION_TYPES from '../../actions/ACTION_TYPES';
 import {setProjectPageInfo} from './metadata/page.metdata.reducer';
-import {setRepoPageData} from './repo/page.repo.reducer';
+import {setRepoPageData, addCommitsToRepo} from './repo/page.repo.reducer';
 
 export default function (state, action) {
     switch (action.type) {
@@ -9,6 +9,8 @@ export default function (state, action) {
         return setProjectPageInfo(state, action?.payload);
     case ACTION_TYPES.PAGE.setPageRepo:
         return setRepoPageData(state, action?.payload);
+        case ACTION_TYPES.PAGE.addCommitsToRepo:
+            return addCommitsToRepo(state, action?.payload);
     default:
         return state || initialState.loadInitials().page;
     }

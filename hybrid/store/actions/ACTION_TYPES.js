@@ -5,6 +5,7 @@ export default {
     },
     PAGE: {
         setPageMetadata: 'page.setPageMetadata',
-        setPageRepo: 'page.setPageRepo'
+        setPageRepo: 'page.setPageRepo',
+        addCommitsToRepo: 'page.addCommitsToRepo'
     }
 };

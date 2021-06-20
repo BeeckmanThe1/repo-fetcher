@@ -18,3 +18,13 @@ export const setRepositories = (state, payload) => {
 
     return newState;
 };
+
+export const rankRepo = (state, payload) => {
+    const newState = _.cloneDeep(state);
+    const newRepositories = newState.repositories.items || [];
+    const newRepo = newRepositories.find(repo => repo?.name === payload?.repoName);
+    newRepo.ranking = payload?.ranking;
+    newState.repositories.items = newRepositories;
+
+    return newState;
+};

@@ -3,14 +3,14 @@ import {useDispatch, useSelector} from "react-redux";
 import pageActions from "../../store/actions/page/page.action";
 import classnames from 'classnames';
 import storageHelper from '../../utils/storageHelper.util';
+import {filterCommits} from "./CommitsOverview.util";
 
-const CommitsTableSection = () => {
+const CommitsTableSection = ({searchInput}) => {
 
     const repo = useSelector(state => state?.page?.repo);
     const dispatch = useDispatch();
     const commits = repo?.commits || [];
 
-    //TODO: move this somewhere else
     const displayDate = date => date && new Date(date)?.toLocaleDateString();
 
     const repoCommitsKey = `${repo?.name}.commits`;
@@ -36,7 +36,7 @@ const CommitsTableSection = () => {
             </tr>
             </thead>
             <tbody>
-            {commits.map(commit => <tr>
+            {filterCommits(commits, searchInput).map(commit => <tr>
                 <td>{commit.author}</td>
                 <td>{commit?.message || 'Author'}</td>
                 <td>{displayDate(commit?.date)}</td>

@@ -13,7 +13,7 @@ Een app die verbinding maakt met de Github API en alle openbare repositories van
 
 ~~Laad commits~~
 ~~Nadat op een repository is geklikt, moet de gebruiker een pagina te zien krijgen met de laatste 20 commits op die repository,~~
-ook een zoekveld om de commits te filteren op de term die in het veld is ingevoegd.
+~~ook een zoekveld om de commits te filteren op de term die in het veld is ingevoegd.~~
 
 ### Bonustaken
 

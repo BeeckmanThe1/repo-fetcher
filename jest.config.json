@@ -1,7 +1,8 @@
 {
     "collectCoverage": true,
     "collectCoverageFrom": [
-        "{hybrid,client,server}/utils/*.util.js"
+        "{hybrid,client,server}/utils/*.util.js",
+        "{hybrid,client,server}/**/*.util.js"
     ],
     "coveragePathIgnorePatterns": [
         "node_modules"

@@ -1,9 +1,11 @@
 import React, {useState} from 'react';
 import classnames from 'classnames';
+import PropTypes from 'prop-types';
 
 const RankingStars = ({numberOfStars, ranking, handleRanking}) => {
     const [hoveredStar, setHoveredStar] = useState();
-    const stars = new Array(numberOfStars || 5).fill('');
+    const [rankingState, setRankingState] = useState();
+    const stars = new Array(numberOfStars).fill('');
     const shouldStarBeGold = (rankingCurrentStar, ranking) => {
         const isHovering = !!hoveredStar;
         const hasRanking = !!ranking;
@@ -22,4 +24,16 @@ const RankingStars = ({numberOfStars, ranking, handleRanking}) => {
     </div>;
 }
 
+RankingStars.propTypes = {
+    /** Choose the desired number of stars*/
+    numberOfStars: PropTypes.number,
+    /** Choose the desired ranking*/
+    ranking: PropTypes.number,
+    /** Callback handling changing rank*/
+    handleRanking: PropTypes.func.isRequired,
+};
+RankingStars.defaultProps = {
+    numberOfStars: 5,
+    ranking: 0
+};
 export default RankingStars;

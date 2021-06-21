@@ -1,3 +1,6 @@
-.rep-repositories-table-section{
-  //background-color: red;
+.rep-repositories-table-section {
+  .fas.fa-caret-up, .fas.fa-caret-down, .fas.fa-caret-right {
+    cursor: pointer;
+    margin-left: $medium-padding;
+  }
 }

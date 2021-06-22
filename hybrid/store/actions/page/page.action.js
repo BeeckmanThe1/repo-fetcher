@@ -1,7 +1,5 @@
 import ACTION_TYPES from '../ACTION_TYPES';
 import axios from 'axios';
-import storageHelper from '../../../utils/storageHelper.util';
-import CONSTANTS from '../../../CONSTANTS';
 
 const setPageMetadata = pageInfo => {
     return {
@@ -15,11 +13,6 @@ const setPageRepo = (payload) => {
         type: ACTION_TYPES.PAGE.setPageRepo,
         payload
     };
-};
-
-
-const getFromMemory = key => {
-
 };
 
 //TODO: dry config

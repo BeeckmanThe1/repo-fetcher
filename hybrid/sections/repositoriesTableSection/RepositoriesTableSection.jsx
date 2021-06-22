@@ -8,7 +8,6 @@ import {getCaretIcon, sortArrayOfObjects} from '../../utils/sorting.util';
 
 const RepositoriesTableSection = () => {
 
-    const [didMount, setDidMount] = useState(false);
     const [ordering, setOrdering] = useState({ranking: undefined});
 
     const repos = useSelector(state => state?.website?.repositories?.items) || [];
@@ -23,7 +22,6 @@ const RepositoriesTableSection = () => {
         }
     };
 
-    useEffect(() => setDidMount(true), []);
     useEffect(getStoredRankingAndDispatch, []);
 
     const changeOrdering = type => {
@@ -56,7 +54,7 @@ const RepositoriesTableSection = () => {
                     <th scope="col">Owner</th>
                     <th scope="col">
                     Ranking
-                        <i onClick={() => changeOrdering('ranking')}
+                        <i aria-hidden onClick={() => changeOrdering('ranking')}
                             className={classnames(getCaretIcon(ordering?.ranking))}/>
                     </th>
                     <th scope="col"></th>
@@ -65,11 +63,10 @@ const RepositoriesTableSection = () => {
             <tbody>
                 {sortedRepos.map((repo, index) => {
                     const rankingStoreKey = `${repo?.name}.ranking` || 0;
-                    const storedRanking = didMount && storageHelper.getItem(rankingStoreKey);
 
-                    return <tr>
+                    return <tr key={repo?.name}>
                         <th scope="row">{index + 1}</th>
-                        <td>{repo.name}</td>
+                        <td>{repo?.name}</td>
                         <td>{repo?.userName}</td>
                         <td><RankingStars {...{
                             handleRanking: rank => {

@@ -4,6 +4,7 @@ import pageActions from '../../store/actions/page/page.action';
 import classnames from 'classnames';
 import storageHelper from '../../utils/storageHelper.util';
 import {filterCommits} from './CommitsOverview.util';
+import PropTypes from 'prop-types';
 
 const CommitsTableSection = ({searchInput}) => {
 
@@ -21,7 +22,6 @@ const CommitsTableSection = ({searchInput}) => {
     }, []);
 
     useEffect(() => {
-        console.log('repo?.commits', repo?.commits);
         !!repo?.commits && storageHelper.setItem(repoCommitsKey, repo?.commits);
     }, [repo?.commits]);
 
@@ -36,7 +36,7 @@ const CommitsTableSection = ({searchInput}) => {
                 </tr>
             </thead>
             <tbody>
-                {filterCommits(commits, searchInput).map(commit => <tr>
+                {filterCommits(commits, searchInput).map((commit, index) => <tr key={`${commit?.date}-${index}`}>
                     <td>{commit.author}</td>
                     <td>{commit?.message}</td>
                     <td>{displayDate(commit?.date)}</td>
@@ -45,5 +45,8 @@ const CommitsTableSection = ({searchInput}) => {
             </tbody>
         </table>
     </section>;
+};
+CommitsTableSection.propTypes = {
+    searchInput: PropTypes.string,
 };
 export default CommitsTableSection;

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const SearchBar = ({handleInput}) => {
     const processInput = e => {
@@ -12,10 +13,14 @@ const SearchBar = ({handleInput}) => {
                     className="form-control"/>
             </div>
             <button type="button" className="btn btn-primary">
-                <i className="fas fa-search"></i>
+                <i aria-hidden className="fas fa-search"></i>
             </button>
         </div>
     </div>;
 };
 
+SearchBar.propTypes = {
+    /** Callback handling input from user*/
+    handleInput: PropTypes.func.isRequired,
+};
 export default SearchBar;

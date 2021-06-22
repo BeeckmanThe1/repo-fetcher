@@ -1,5 +1,6 @@
 import React from 'react';
 import classnames from 'classnames';
+import PropTypes from 'prop-types';
 
 const PageIntro = ({header, extraClassName, children}) => {
 
@@ -7,6 +8,15 @@ const PageIntro = ({header, extraClassName, children}) => {
         <h1>{header}</h1>
         {children}
     </section>;
+};
+
+PageIntro.propTypes = {
+    header: PropTypes.string,
+    extraClassName: PropTypes.string,
+    children: PropTypes.oneOfType([
+        PropTypes.arrayOf(PropTypes.node),
+        PropTypes.node
+    ])
 };
 
 export default PageIntro;

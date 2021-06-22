@@ -13,15 +13,15 @@ Een app die verbinding maakt met de Github API en alle openbare repositories van
 
 ~~Laad commits~~
 ~~Nadat op een repository is geklikt, moet de gebruiker een pagina te zien krijgen met de laatste 20 commits op die repository,~~
-ook een zoekveld om de commits te filteren op de term die in het veld is ingevoegd.
+~~ook een zoekveld om de commits te filteren op de term die in het veld is ingevoegd.~~
 
 ### Bonustaken
 
 - Gebruik een moderne CSS-oplossing (CSS-modules, Styled-componenten, enz.); 
 - Infinite scroll voor de commits-pagina️
 - Maak het mogelijk om de volgorde waarin de repositories worden weergegeven te wijzigen (met sterren, naam, enz.);
-- Component library (Storybook.js, Styleguidist, enz.);
-- Server-side rendering.
+- ~~Component library (Storybook.js, Styleguidist, enz.);~~
+- ~~Server-side rendering.~~
  
 
 ## Oplossing

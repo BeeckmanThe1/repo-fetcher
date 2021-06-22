@@ -1,0 +1,8 @@
+.rep-ranking-stars {
+  .fas.fa-star {
+    cursor: pointer;
+    &.rep-golden-star {
+      color: gold;
+    }
+  }
+}

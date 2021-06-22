@@ -9,8 +9,8 @@ export default function (state, action) {
         return setProjectPageInfo(state, action?.payload);
     case ACTION_TYPES.PAGE.setPageRepo:
         return setRepoPageData(state, action?.payload);
-        case ACTION_TYPES.PAGE.addCommitsToRepo:
-            return addCommitsToRepo(state, action?.payload);
+    case ACTION_TYPES.PAGE.addCommitsToRepo:
+        return addCommitsToRepo(state, action?.payload);
     default:
         return state || initialState.loadInitials().page;
     }

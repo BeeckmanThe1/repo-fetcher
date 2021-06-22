@@ -33,7 +33,7 @@ const rankRepo = (repoName, ranking) => {
     return {
         payload: {repoName, ranking},
         type: ACTION_TYPES.WEBSITE.rankRepo
-    }
+    };
 };
 
 export default {setProjectConstants, fetchRepositoriesData, rankRepo};

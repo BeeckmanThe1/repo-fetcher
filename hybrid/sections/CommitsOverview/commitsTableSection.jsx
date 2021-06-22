@@ -1,9 +1,9 @@
 import React, {useEffect} from 'react';
-import {useDispatch, useSelector} from "react-redux";
-import pageActions from "../../store/actions/page/page.action";
+import {useDispatch, useSelector} from 'react-redux';
+import pageActions from '../../store/actions/page/page.action';
 import classnames from 'classnames';
 import storageHelper from '../../utils/storageHelper.util';
-import {filterCommits} from "./CommitsOverview.util";
+import {filterCommits} from './CommitsOverview.util';
 
 const CommitsTableSection = ({searchInput}) => {
 
@@ -29,21 +29,21 @@ const CommitsTableSection = ({searchInput}) => {
         <h2>Commits</h2>
         <table className="table">
             <thead>
-            <tr>
-                <th scope="col">Author</th>
-                <th scope="col">message</th>
-                <th scope="col">date</th>
-            </tr>
+                <tr>
+                    <th scope="col">Author</th>
+                    <th scope="col">message</th>
+                    <th scope="col">date</th>
+                </tr>
             </thead>
             <tbody>
-            {filterCommits(commits, searchInput).map(commit => <tr>
-                <td>{commit.author}</td>
-                <td>{commit?.message}</td>
-                <td>{displayDate(commit?.date)}</td>
-            </tr>)}
+                {filterCommits(commits, searchInput).map(commit => <tr>
+                    <td>{commit.author}</td>
+                    <td>{commit?.message}</td>
+                    <td>{displayDate(commit?.date)}</td>
+                </tr>)}
 
             </tbody>
         </table>
-    </section>
+    </section>;
 };
 export default CommitsTableSection;

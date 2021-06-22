@@ -13,7 +13,7 @@ const reduceCommit = rawCommit => {
         date: rawCommit?.author?.date,
         message: rawCommit?.message,
     };
-}
+};
 export const addCommitsToRepo = (state, payload) => {
     const newState = _.cloneDeep(state);
 

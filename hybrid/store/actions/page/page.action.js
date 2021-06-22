@@ -1,7 +1,7 @@
 import ACTION_TYPES from '../ACTION_TYPES';
-import axios from "axios";
+import axios from 'axios';
 import storageHelper from '../../../utils/storageHelper.util';
-import CONSTANTS from "../../../CONSTANTS";
+import CONSTANTS from '../../../CONSTANTS';
 
 const setPageMetadata = pageInfo => {
     return {
@@ -43,7 +43,7 @@ const addCommitsToRepo = (repo, commits) => {
         } catch (err) {
             return;  //  TODO: write decent error handling
         }
-    }
+    };
 };
 
 export default {setPageMetadata, setPageRepo, addCommitsToRepo};

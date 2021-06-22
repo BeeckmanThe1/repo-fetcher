@@ -1,14 +1,14 @@
 export const getCaretIcon = sortDirection => {
     const base = 'fas fa-caret';
     switch (sortDirection) {
-        case 'asc':
-            return `${base}-up`;
-        case 'desc':
-            return `${base}-down`;
-        default:
-            return `${base}-right`;
+    case 'asc':
+        return `${base}-up`;
+    case 'desc':
+        return `${base}-down`;
+    default:
+        return `${base}-right`;
     }
-}
+};
 
 export const sortArrayOfObjects = (arrayToBeSorted = [], ordering = {}) => {
     const orderKeys = Object.keys(ordering);

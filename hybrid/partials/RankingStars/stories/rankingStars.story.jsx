@@ -1,7 +1,7 @@
-import React from "react";
+import React from 'react';
 import {withKnobs, number} from '@storybook/addon-knobs';
 import {action} from '@storybook/addon-actions';
-import RankingStars from "../RankingStars";
+import RankingStars from '../RankingStars';
 import '../_rankingStars.scss';
 
 const config = {
@@ -14,6 +14,6 @@ export const Stars = () => <RankingStars {...{
     numberOfStars: number('Amount of stars', 5, undefined, 'Properties'),
     ranking: number('Current ranking', 5, undefined, 'Properties'),
     handleRanking: action('Clicked star')
-}}/>
+}}/>;
 
 export default config;

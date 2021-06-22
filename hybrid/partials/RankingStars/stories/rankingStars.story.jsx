@@ -2,7 +2,7 @@ import React from 'react';
 import {withKnobs, number} from '@storybook/addon-knobs';
 import {action} from '@storybook/addon-actions';
 import RankingStars from '../RankingStars';
-import '../_rankingStars.scss';
+import '../../../../client/styles/styles.scss';
 
 const config = {
     title: 'Partials',

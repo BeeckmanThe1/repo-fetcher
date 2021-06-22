@@ -13,7 +13,7 @@ const setProjectConstants = () => {
 const fetchRepositoriesData = () => {
     return async dispatch => {
         try {
-            const result = await axios.get('https://api.github.com/users/BeeckmanThe1/repos', {
+            const result = await axios.get(`https://api.github.com/users/${process.env.GITHUB_REPO_OWNER}/repos`, {
                 auth: {
                     username: process.env.GITHUB_USERNAME,
                     password: process.env.GITHUB_PASSWORD

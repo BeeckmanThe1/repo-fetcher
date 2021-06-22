@@ -16,6 +16,7 @@ export const setRepositories = (state, payload) => {
     const rawRepositories = payload?.repositories || [];
 
     newRepositories.items = rawRepositories.map(rawRepo => reduceRepository(rawRepo));
+    newRepositories.githubOwner = process.env.GITHUB_REPO_OWNER;
 
     return newState;
 };

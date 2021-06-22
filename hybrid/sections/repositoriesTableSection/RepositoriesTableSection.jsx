@@ -4,6 +4,7 @@ import {useDispatch, useSelector} from "react-redux";
 import RankingStars from "../../partials/RankingStars/RankingStars.jsx";
 import storageHelper from '../../utils/storageHelper.util';
 import websiteActions from '../../store/actions/website/website.action';
+import {getCaretIcon, sortArrayOfObjects} from "../../utils/sorting.util";
 
 const RepositoriesTableSection = () => {
 
@@ -25,40 +26,6 @@ const RepositoriesTableSection = () => {
     useEffect(() => setDidMount(true), []);
     useEffect(getStoredRankingAndDispatch, []);
 
-    const getCaretIcon = sortDirection => {
-        const base = 'fas fa-caret';
-        switch (sortDirection) {
-            case 'asc':
-                return `${base}-up`;
-            case 'desc':
-                return `${base}-down`;
-            default:
-                return `${base}-right`;
-        }
-    }
-
-    const sortArrayOfObjects = (arrayToBeSorted, ordering) => {
-        const orderKeys = Object.keys(ordering);
-
-        let sortedArray = arrayToBeSorted;
-
-        const sortArrayOnObjectKey = key => sortedArray.sort((repo1, repo2) => {
-            const orderDirection = ordering[key];
-            if (orderDirection === 'asc') {
-                return repo1?.[key] >= repo2?.[key] ? 1 : -1;
-            } else if (orderDirection === 'desc') {
-                return repo1?.[key] >= repo2?.[key] ? -1 : 1;
-            } else return 0;
-        });
-
-        for (let i = 0; i < orderKeys.length; i++) {
-            const currentKey = orderKeys[i];
-            sortedArray = sortArrayOnObjectKey(currentKey);
-        }
-
-        return sortedArray || arrayToBeSorted || [];
-    };
-
     const changeOrdering = type => {
         setOrdering(prev => {
             const prevRanking = prev?.[type];
@@ -78,7 +45,6 @@ const RepositoriesTableSection = () => {
             return newOrdering;
         });
     }
-
     const sortedRepos = sortArrayOfObjects(repos, ordering);
 
     return <section className={classnames('rep-repositories-table-section', 'container')}>

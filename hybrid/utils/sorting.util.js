@@ -18,9 +18,13 @@ export const sortArrayOfObjects = (arrayToBeSorted = [], ordering = {}) => {
     const sortArrayOnObjectKey = key => sortedArray?.sort((repo1, repo2) => {
         const orderDirection = ordering[key];
         if (orderDirection === 'asc') {
-            return repo1?.[key] >= repo2?.[key] ? 1 : -1;
+            const value1 = repo1?.[key] || 0;
+            const value2 = repo2?.[key] || 0;
+            return value1 >= value2 ? 1 : -1;
         } else if (orderDirection === 'desc') {
-            return repo1?.[key] >= repo2?.[key] ? -1 : 1;
+            const value1 = repo1?.[key] || 0;
+            const value2 = repo2?.[key] || 0;
+            return value1 >= value2 ? -1 : 1;
         }
     });
 

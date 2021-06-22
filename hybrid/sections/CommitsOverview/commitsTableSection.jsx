@@ -8,6 +8,7 @@ import PropTypes from 'prop-types';
 
 const CommitsTableSection = ({searchInput}) => {
 
+    const githubOwner = useSelector(state => state?.website?.repositories?.githubOwner);
     const repo = useSelector(state => state?.page?.repo);
     const dispatch = useDispatch();
     const commits = repo?.commits || [];
@@ -18,7 +19,7 @@ const CommitsTableSection = ({searchInput}) => {
 
     useEffect(() => {
         const storedCommits = storageHelper.getItem(repoCommitsKey);
-        dispatch(pageActions.addCommitsToRepo(repo, storedCommits));
+        dispatch(pageActions.addCommitsToRepo(repo, githubOwner, storedCommits));
     }, []);
 
     useEffect(() => {

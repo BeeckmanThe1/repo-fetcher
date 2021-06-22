@@ -52,6 +52,7 @@
 To run the project locally:
 
 - add environment variable -> ENV: "development"
+- GITHUB_REPO_OWNER
 - optional: GITHUB_USERNAME
 - optional: GITHUB_PASSWORD
 - npm i

@@ -10,25 +10,8 @@ export default {
         REPO_DETAIL_PAGE: {
             ID: 'repo-detail-page',
             WRAPPER_ID: 'repo-detail-page-wrapper',
-            //SLUG: dynamically decided
-            //TITLE: dynamically decided
-            //META_DESCRIPTION: dynamically decided
         },
         STATIC_PAGES: {
-            TEST: {
-                ID: 'test-static-page',
-                WRAPPER_ID: 'test-static-page-wrapper',
-                SLUG: '/test',
-                TITLE: 'Test',
-                META_DESCRIPTION: 'Test'
-            },
-            TEST_2: {
-                ID: 'test2-static-page',
-                WRAPPER_ID: 'test2-static-page-wrapper',
-                SLUG: '/test2',
-                TITLE: 'Test 2',
-                META_DESCRIPTION: 'Test 2'
-            },
             REPO_LANDINGS_PAGE: {
                 ID: 'repo-landing-page',
                 WRAPPER_ID: 'repo-landing-page-wrapper',

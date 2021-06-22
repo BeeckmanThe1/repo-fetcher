@@ -15,11 +15,11 @@ const setPageRepo = (payload) => {
     };
 };
 
-const addCommitsToRepo = (repo, commits) => {
+const addCommitsToRepo = (repo, githubOwner, commits) => {
     const repoName = repo?.name;
     return async dispatch => {
         try {
-            const fetchResult = !commits && await axios.get(`https://api.github.com/repos/BeeckmanThe1/${repoName}/commits?per_page=20`, {
+            const fetchResult = !commits && await axios.get(`https://api.github.com/repos/${githubOwner}/${repoName}/commits?per_page=20`, {
                 auth: {
                     username: process.env.GITHUB_USERNAME,
                     password: process.env.GITHUB_PASSWORD

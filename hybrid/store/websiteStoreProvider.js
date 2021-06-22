@@ -1,6 +1,5 @@
 import createStore from '../../hybrid/store/store';
 import websiteAction from '../../hybrid/store/actions/website/website.action';
-import initialState from "./initialState";
 
 const populateStore = options => {
     const store = options?.store;

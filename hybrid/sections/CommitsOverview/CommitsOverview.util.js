@@ -1,7 +1,7 @@
 const removeWhiteSpaces = (stringy) => stringy?.replace(/\s+/g, '');
 
 export const filterCommits = (commits, searchInput) => {
-    const filteredCommits = !!searchInput ? commits.filter(commit => {
+    const filteredCommits = searchInput ? commits.filter(commit => {
 
         const commitMessage = commit?.message;
         const spaceLessUpperedCommitMessage = removeWhiteSpaces(commitMessage)?.toUpperCase();
@@ -10,4 +10,4 @@ export const filterCommits = (commits, searchInput) => {
         return spaceLessUpperedCommitMessage?.includes(spaceLessUpperedSearchInput);
     }) : commits;
     return filteredCommits || [];
-}
+};

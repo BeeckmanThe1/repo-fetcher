@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
-import CommitsTableSection from "../../sections/CommitsOverview/commitsTableSection.jsx";
-import PageIntro from "../../partials/PageIntro/PageIntro.jsx";
-import {useSelector} from "react-redux";
-import SearchBar from "../../partials/SearchBar/SearchBar.jsx";
+import CommitsTableSection from '../../sections/CommitsOverview/commitsTableSection.jsx';
+import PageIntro from '../../partials/PageIntro/PageIntro.jsx';
+import {useSelector} from 'react-redux';
+import SearchBar from '../../partials/SearchBar/SearchBar.jsx';
 
 const RepoDetailsPage = () => {
     const repo = useSelector(state => state?.page?.repo);

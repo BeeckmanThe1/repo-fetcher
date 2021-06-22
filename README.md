@@ -2,7 +2,7 @@
 
 ## Wat wordt er verwacht
 
-Een app die verbinding maakt met de Github API en alle openbare repositories van een gebruiker weergeeft, en de laatste commits voor de repositories.
+~~Een app die verbinding maakt met de Github API en alle openbare repositories van een gebruiker weergeeft, en de laatste commits voor de repositories.~~
 
 ### Taken
 
@@ -19,24 +19,26 @@ Een app die verbinding maakt met de Github API en alle openbare repositories van
 
 - Gebruik een moderne CSS-oplossing (CSS-modules, Styled-componenten, enz.); 
 - Infinite scroll voor de commits-pagina️
-- Maak het mogelijk om de volgorde waarin de repositories worden weergegeven te wijzigen (met sterren, naam, enz.);
+- ~~Maak het mogelijk om de volgorde waarin de repositories worden weergegeven te wijzigen (met sterren, naam, enz.);~~
 - ~~Component library (Storybook.js, Styleguidist, enz.);~~
 - ~~Server-side rendering.~~
  
 
 ## Oplossing
 
-Bepaal welk framework je wil gebruiken: VueJS, ReactJS of Angular;
-Met VueJS kun je beginnen met een eenvoudige Vue CLI-app en van daaruit verder werken;
-Met ReactJS kun je beginnen met een eenvoudige create-react-app structuur en van daaruit verder werken;
-Met Angular kun je beginnen met een eenvoudige Angular CLI-app structuur en van daaruit verder werken;
-Gebruik een oplossing voor state management;
-Gebruik ES6+ -functies en noteer in het README-bestand waarom en waarvoor, voor minimaal 2 ervan;
-Schrijf unit-tests en andere tests die je mogelijk nuttig of belangrijk vindt;
-Houd rekening met prestaties en edge cases;
-Wees creatief en laat ons zien wat je in huis hebt.
- 
-uson
+~~Bepaal welk framework je wil gebruiken: VueJS, ReactJS of Angular;~~
+~~Gebruik een oplossing voor state management;~~
+~~Gebruik ES6+ -functies en noteer in het README-bestand waarom en waarvoor, voor minimaal 2 ervan;~~
+~~Schrijf unit-tests en andere tests die je mogelijk nuttig of belangrijk vindt;~~
+~~Houd rekening met prestaties en edge cases;~~
+~~Wees creatief en laat ons zien wat je in huis hebt.~~
+
+## ES6+ functies
+
+- Default Parameter values -> Clean way of defaulting parameters
+- Spread operator -> elegant way to clone an array (bv: sorting.util.js  > sortArrayOfObjects)
+- String interpolation -> using the backticks is a very clean way of string interpolation
+
 ## Oplevering
 
 ~~Maak een nieuwe repository in je account~~ en stuur ons de URL;
@@ -50,7 +52,8 @@ Maak deze repository publiek, of voeg username "wiven" toe als member;
 To run the project locally:
 
 - add environment variable -> ENV: "development"
-- add environment variable -> PORT: "3000"
+- optional: GITHUB_USERNAME
+- optional: GITHUB_PASSWORD
 - npm i
 - npm run start-dev
 

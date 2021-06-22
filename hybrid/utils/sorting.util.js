@@ -10,8 +10,8 @@ export const getCaretIcon = sortDirection => {
     }
 }
 
-export const sortArrayOfObjects = (arrayToBeSorted, ordering) => {
-    const orderKeys = Object.keys(ordering || {});
+export const sortArrayOfObjects = (arrayToBeSorted = [], ordering = {}) => {
+    const orderKeys = Object.keys(ordering);
 
     let sortedArray = arrayToBeSorted && [...arrayToBeSorted];
 

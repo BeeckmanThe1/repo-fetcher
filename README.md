@@ -41,8 +41,8 @@
 
 ## Oplevering
 
-~~Maak een nieuwe repository in je account~~ en stuur ons de URL;
-Maak deze repository publiek, of voeg username "wiven" toe als member;
+~~Maak een nieuwe repository in je account en stuur ons de URL;~~
+~~Maak deze repository publiek, of voeg username "wiven" toe als member;~~
 ~~Maak een README-bestand met de instructies om het project en de tests uit te voeren~~, en voeg commentaar toe waarvan je denkt dat het relevant is.
 
 ## Building the project locally:

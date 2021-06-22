@@ -21,8 +21,8 @@ const init = async router => {
     const getRepoPageMetaData = (repo) => ({
         ID: WEBSITE_SETUP.PAGES.REPO_DETAIL_PAGE.ID,
         WRAPPER_ID: WEBSITE_SETUP.PAGES.REPO_DETAIL_PAGE.WRAPPER_ID,
-        TITLE: repo?.name,  //TODO: find something better
-        META_DESCRIPTION: repo?.description || 'Generic repo metadescription'   //TODO: write better generic description
+        TITLE: repo?.name,
+        META_DESCRIPTION: repo?.description || 'Generic repo metadescription'
     });
     repos.map(repo => {
         return router.get(repo?.slug, async (req, res) => {

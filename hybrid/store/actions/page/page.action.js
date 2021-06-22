@@ -15,7 +15,6 @@ const setPageRepo = (payload) => {
     };
 };
 
-//TODO: dry config
 const addCommitsToRepo = (repo, commits) => {
     const repoName = repo?.name;
     return async dispatch => {

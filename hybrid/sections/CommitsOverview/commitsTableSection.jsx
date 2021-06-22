@@ -38,7 +38,7 @@ const CommitsTableSection = ({searchInput}) => {
             <tbody>
             {filterCommits(commits, searchInput).map(commit => <tr>
                 <td>{commit.author}</td>
-                <td>{commit?.message || 'Author'}</td>
+                <td>{commit?.message}</td>
                 <td>{displayDate(commit?.date)}</td>
             </tr>)}
 

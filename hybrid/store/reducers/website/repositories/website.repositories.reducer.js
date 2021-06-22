@@ -5,7 +5,8 @@ const reduceRepository = repo => {
         name: repo?.name,
         fullName: repo?.full_name,
         description: repo?.description,
-        slug: `/${repo?.name}`,   //TODO: this could be improved
+        slug: `/${repo?.name}`,
+        userName: repo?.owner?.login
     };
 };
 
